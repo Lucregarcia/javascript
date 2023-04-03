@@ -1,5 +1,5 @@
-
-let nombre = prompt ("Bienvenido, ingrese su Nombre y Apellido");
+//!PRIMER ENTREGA
+/*let nombre = prompt ("Bienvenido, ingrese su Nombre y Apellido");
 alert ("Bienvenido " + nombre)
 
 let entrada =  prompt ("Ingrese un accesorio indicando el Número del 1 al 5");
@@ -25,4 +25,38 @@ while (entrada != "ESC") {
             break;
     }
     entrada = prompt ("Ingrese sus accesorios indicando el Número del 1 al 5");
-}
+}*/
+
+//!SEGUNDA ENTREGA
+
+class tiendaAccesorios {
+    constructor(nombre, precio)} {
+    this.nombre = nombre;
+    this.precio = parseFloat (precio)};
+    
+
+const accesorio1 = new tiendaAccesorios ("Collar Amalfi", "7000" );
+const accesorio2 = new tiendaAccesorios ("Collar Costa Azul", "6500" );
+
+
+
+
+/*La idea aca es simular un carro de comprar primitivo con lo aprendido hasta ahora,
+utilizando array, un ciclo, y metodos como push, concatenar, join*/
+
+const accesorios = ["Collar Francia", "Collar Amalfi", "Aros Galaxy"]
+
+const carroVacio = []
+let cantidad = 2
+
+do {
+    let entrada = prompt ("Hola! gracias por elegirnos!!, Ingresa el nombre de tu accesorio elegido")
+    carroVacio.push(entrada)
+    console.log(carroVacio);
+} while (carroVacio.length != cantidad);
+
+const finalCompra = carroVacio.concat(accesorios)
+alert (finalCompra.join("\n"))
+
+
+
