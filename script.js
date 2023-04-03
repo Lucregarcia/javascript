@@ -28,24 +28,47 @@ while (entrada != "ESC") {
 }*/
 
 //!SEGUNDA ENTREGA
+//Pensando en la idea de una página de accesorios de moda, arme una class para ir agregando stock de accesorios.
 
 class tiendaAccesorios {
-    constructor(nombre, precio)} {
+    constructor(nombre, precio){
     this.nombre = nombre;
-    this.precio = parseFloat (precio)};
+    this.precio = parseFloat (precio)
+    }
+}
     
+const accesorios = [];
 
-const accesorio1 = new tiendaAccesorios ("Collar Amalfi", "7000" );
-const accesorio2 = new tiendaAccesorios ("Collar Costa Azul", "6500" );
+accesorios.push (new tiendaAccesorios ("Collar Amalfi", "7000" ));
+accesorios.push (new tiendaAccesorios ("Collar Aros Galaxy", "3000" ));
+accesorios.push (new tiendaAccesorios ("Collar Francia", "6500" ));
+accesorios.push (new tiendaAccesorios ("Collar Mallorca", "7500" ));
+console.log(accesorios);
+
+// Ahora intento simular una especie de buscador de accesorios utilizando el metodo find.
+
+function buscarAccesorio(collar, nombre){
+    return collar.find(objeto => objeto.nombre === nombre);
+}
+for (let index = 0; index < accesorios.length; index++) {
+    let busqueda = buscarAccesorio(accesorios, prompt("Ingresa el nombre del accesorio que queres ver"));
+    if(busqueda != undefined){
+        alert("Accesorio "+busqueda.nombre);
+    }else{
+        alert("En este momento no contamos con stock, registrate y te avisamos cuando vuelve a entrar :)");
+    }
+}
+// Aca aplique un filtro en base a precios.
+
+const resultado = accesorios.filter((el) => el.precio < 6600)
+console.log(resultado);
+const resultado1 = accesorios.filter((el) => el.precio < 4000)
+console.log(resultado);
 
 
+//La idea aca es simular un carro de comprar primitivo con lo aprendido hasta ahora. 
 
-
-/*La idea aca es simular un carro de comprar primitivo con lo aprendido hasta ahora,
-utilizando array, un ciclo, y metodos como push, concatenar, join*/
-
-const accesorios = ["Collar Francia", "Collar Amalfi", "Aros Galaxy"]
-
+const collares = ["Collar Francia", "Collar Amalfi"]
 const carroVacio = []
 let cantidad = 2
 
@@ -55,7 +78,7 @@ do {
     console.log(carroVacio);
 } while (carroVacio.length != cantidad);
 
-const finalCompra = carroVacio.concat(accesorios)
+const finalCompra = carroVacio.concat(collares)
 alert (finalCompra.join("\n"))
 
 
