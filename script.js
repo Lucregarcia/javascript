@@ -35,7 +35,7 @@ for (let index = 0; index < accesorios.length; index++) {
 const resultado = accesorios.filter((el) => el.precio < 6600)
 console.log(resultado);
 const resultado1 = accesorios.filter((el) => el.precio < 4000)
-console.log(resultado);
+console.log(resultado1);
 
 
 //La idea aca es simular un carro de comprar primitivo con lo aprendido hasta ahora. 
