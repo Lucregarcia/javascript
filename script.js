@@ -59,15 +59,6 @@ let agregarStock = document.getElementById("agregarStock")
 
 
 
-
-
-
-
-
-
-
-
-
     
 //Pensando en la idea de una página de accesorios de moda, arme una class y con lo aprendido en las clases arme una especie de base de datos con stock para ir cargando
 
