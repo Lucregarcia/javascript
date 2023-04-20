@@ -34,12 +34,29 @@
                 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
                     aria-label="Slide 3"></button>
             </div>
-            <>
         </div>
     </section>
+    <section> <!--LISTA DE ACCESORIOS-->
+        <ul id="mostrarAccesorios">
 
+        </ul>
+    </section>
+    <!--FORMULARIO PARA AGREGAR ACCESORIOS-->
+    <form id="agregarStock">
+        <label for="nombre">Nombre del Accesorio</label>
+        <input type="text" name="nombre" class="nombre" required>
+        
+        <label for="">Tipo</label>
+        <input type="text" name="" class="">
+        
+        <label for="">Precio</label>
+        <input type="number" name="" class="">
+
+        <button type="submit">Subir al stock</button>
+    </form>
+        
     <!--FORMULARIO-->
-    <form class="formulario">
+    <form class="formularioStock">
         <input type="text" placeholder="nombre del accesorio" id="nombre">
         <input type="text" placeholder="precio" id="precio">
         <button>Agregar a stock</button>

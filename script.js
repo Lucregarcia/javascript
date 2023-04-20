@@ -1,6 +1,75 @@
 
-//!SEGUNDA ENTREGA
-//Pensando en la idea de una página de accesorios de moda, arme una class para ir agregando stock de accesorios.
+//!TERCERA ENTREGA
+
+let id = 0
+
+class accesoriosModa{
+    constructor(nombre, tipo, precio){
+        this.id = id++;
+        this.nombre = nombre;
+        this.tipo = tipo;
+        this.precio = precio;
+    }
+}
+
+const accesoriosEnStock = []
+
+let choker = new accesoriosModa (
+    "Mallorca",
+    "Choker",
+    "7500",
+)
+
+let collar = new accesoriosModa (
+    "Francia",
+    "Largo",
+    "6500",
+)
+
+let aro = new accesoriosModa (
+    "Galaxy",
+    "Piedra natural",
+    "3000",
+)
+
+let pulsera = new accesoriosModa (
+    "Amalfi",
+    "acero",
+    "7000",
+)
+
+accesoriosEnStock.push(choker, collar, aro, pulsera)
+
+//accesorios que ya estan cargados
+
+let mostrarAccesorios = document.getElementById("mostrarAccesorios")
+
+//Muestro el array en la pantalla.
+
+for (const dato of accesoriosEnStock) {
+    
+    let li = document.createElement("li")
+        
+    li.innerHTML = `Nombre del accesorio: ${dato.nombre}, tipo de accesorio ${dato.tipo} precio: ${dato.precio}`
+    
+    mostrarAccesorios.appendChild(li)    
+    }
+    
+let agregarStock = document.getElementById("agregarStock")
+
+
+
+
+
+
+
+
+
+
+
+
+    
+//Pensando en la idea de una página de accesorios de moda, arme una class y con lo aprendido en las clases arme una especie de base de datos con stock para ir cargando
 
 class tiendaAccesorios {
     constructor(nombre, precio){
@@ -9,65 +78,36 @@ class tiendaAccesorios {
     }
 }
 
-let amalfi = new tiendaAccesorios ("Collar Amalfi", 7000);
-let galaxi = new tiendaAccesorios ("Aros Galaxy", 3000 );
+let amalfi = new tiendaAccesorios ("Pulsera Amalfi", 7000);
+let galaxy = new tiendaAccesorios ("Aros Galaxy", 3000 );
 let francia = new tiendaAccesorios ("Collar Francia", 6500);
 let mallorca = new tiendaAccesorios ("Collar Mallorca", 7500);
 
 let baseDeDatos = [ amalfi, galaxy, francia, mallorca];
 let inv = JSON.parse(localStorage.getItem("BD"));
 
-
+// validacion para evitar null desde el local storage.
 if (inv === null) {
     inv = baseDeDatos;
     localStorage.setItem( "BD", JSON.stringify(inv))
 }
 
+//FORMULARIO PARA CARGAR STOCK
+let formulario = document.querySelector('.formularioStock');
+let inputNombre = document.getElementById('nombre');
+let inputPrecio = document.getElementById('precio')
+
+// E.PREVENTDEFAULT para que cuando me equivoco no vuelva a cargar.
+formulario.addEventListener('submit', function (event) {
+    event.preventDefault();
+    let newProd = new tiendaAccesorios(inputNombre.value, inputPrecio.value);
+    inv.push(newProd);
+    localStorage.setItem("BD", JSON.stringify(inv));
+});
 
 
-/*const accesorios = [];
-
-accesorios.push (new tiendaAccesorios ("Collar Amalfi", "7000" ));
-accesorios.push (new tiendaAccesorios ("Collar Aros Galaxy", "3000" ));
-accesorios.push (new tiendaAccesorios ("Collar Francia", "6500" ));
-accesorios.push (new tiendaAccesorios ("Collar Mallorca", "7500" ));
-console.log(accesorios);
-
-// Ahora intento simular una especie de buscador de accesorios utilizando el metodo find.
-
-function buscarAccesorio(collar, nombre){
-    return collar.find(objeto => objeto.nombre === nombre);
-}
-for (let index = 0; index < accesorios.length; index++) {
-    let busqueda = buscarAccesorio(accesorios, prompt("Ingresa el nombre del accesorio que queres ver"));
-    if(busqueda != undefined){
-        alert("Accesorio "+busqueda.nombre);
-    }else{
-        alert("En este momento no contamos con stock, registrate y te avisamos cuando vuelve a entrar :)");
-    }
-}
-// Aca aplique un filtro en base a precios.
-
-const resultado = accesorios.filter((el) => el.precio < 6600)
-console.log(resultado);
-const resultado1 = accesorios.filter((el) => el.precio < 4000)
-console.log(resultado1);
 
 
-//La idea aca es simular un carro de comprar primitivo con lo aprendido hasta ahora. 
-
-const collares = ["Collar Francia", "Collar Amalfi"]
-const carroVacio = []
-let cantidad = 2
-
-do {
-    let entrada = prompt ("Hola! gracias por elegirnos!!, Ingresa el nombre de tu accesorio elegido")
-    carroVacio.push(entrada)
-    console.log(carroVacio);
-} while (carroVacio.length != cantidad);
-
-const finalCompra = carroVacio.concat(collares)
-alert (finalCompra.join("\n"))*/
 
 
 
