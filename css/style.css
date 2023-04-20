@@ -1,0 +1,27 @@
+*{
+    margin: O;
+    padding: O;
+    box-sizing: border-box;
+}
+
+.barradenav{
+    max-width: 1600px;
+}
+.barradenav a {
+    font-size: 60px;
+}
+
+.hero{
+    max-width: 1600px;
+}
+
+.hero div img {
+    height: 540px;
+}
+
+.hero div h5{
+    font-size: 45px;
+}
+.hero div p{
+    font-size: 25px;
+}

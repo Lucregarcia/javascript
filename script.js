@@ -8,8 +8,24 @@ class tiendaAccesorios {
     this.precio = parseFloat (precio)
     }
 }
-    
-const accesorios = [];
+
+let amalfi = new tiendaAccesorios ("Collar Amalfi", 7000);
+let galaxi = new tiendaAccesorios ("Aros Galaxy", 3000 );
+let francia = new tiendaAccesorios ("Collar Francia", 6500);
+let mallorca = new tiendaAccesorios ("Collar Mallorca", 7500);
+
+let baseDeDatos = [ amalfi, galaxy, francia, mallorca];
+let inv = JSON.parse(localStorage.getItem("BD"));
+
+
+if (inv === null) {
+    inv = baseDeDatos;
+    localStorage.setItem( "BD", JSON.stringify(inv))
+}
+
+
+
+/*const accesorios = [];
 
 accesorios.push (new tiendaAccesorios ("Collar Amalfi", "7000" ));
 accesorios.push (new tiendaAccesorios ("Collar Aros Galaxy", "3000" ));
@@ -51,7 +67,7 @@ do {
 } while (carroVacio.length != cantidad);
 
 const finalCompra = carroVacio.concat(collares)
-alert (finalCompra.join("\n"))
+alert (finalCompra.join("\n"))*/
 
 
 
