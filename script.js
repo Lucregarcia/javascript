@@ -40,11 +40,10 @@ let pulsera = new accesoriosModa (
 
 accesoriosEnStock.push(choker, collar, aro, pulsera)
 
-//accesorios que ya estan cargados
+//accesorios que ya estan cargados en stock y lo muestro en la pantalla
 
 let mostrarAccesorios = document.getElementById("mostrarAccesorios")
 
-//Muestro el array en la pantalla.
 
 for (const dato of accesoriosEnStock) {
     
@@ -53,48 +52,66 @@ for (const dato of accesoriosEnStock) {
     li.innerHTML = `Nombre del accesorio: ${dato.nombre}, tipo de accesorio ${dato.tipo} precio: ${dato.precio}`
     
     mostrarAccesorios.appendChild(li)    
-    }
-    
-let agregarStock = document.getElementById("agregarStock")
-
-
-
-    
-//Pensando en la idea de una página de accesorios de moda, arme una class y con lo aprendido en las clases arme una especie de base de datos con stock para ir cargando
-
-class tiendaAccesorios {
-    constructor(nombre, precio){
-    this.nombre = nombre;
-    this.precio = parseFloat (precio)
-    }
 }
 
-let amalfi = new tiendaAccesorios ("Pulsera Amalfi", 7000);
-let galaxy = new tiendaAccesorios ("Aros Galaxy", 3000 );
-let francia = new tiendaAccesorios ("Collar Francia", 6500);
-let mallorca = new tiendaAccesorios ("Collar Mallorca", 7500);
+//Agrego mas stock
+let agregarStock = document.getElementById("agregarStock")
+console.log(accesoriosEnStock);
 
-let baseDeDatos = [ amalfi, galaxy, francia, mallorca];
-let inv = JSON.parse(localStorage.getItem("BD"));
+const accesorioNuevo = (e) =>{
+    e.preventDefault()
+    id++;
+    let nombre = e.target
+    let tipo = e.target
+    let precio = e.target
+
+    let nuevo = new accesoriosModa(
+        nombre.children[1].value,
+        tipo.children[3].value,
+        precio.children[5].value,
+    );
+accesoriosEnStock .push(nuevo)
+
+//mostrar el nuevo resultado
+    let mostrarAccesorios = document.getElementById("mostrarAccesorios")
+        mostrarAccesorios.innerHTML = "";
+        accesoriosEnStock .forEach(accesoriosModa =>{
+            let li = document.createElement("li")
+            li.innerHTML = `nombre del accesorio: <b> ${accesoriosModa.nombre}</b> tipo
+            <b>${accesoriosModa.tipo}</b> <br>
+            precio <b> ${accesoriosModa.precio}</b>`
+
+            mostrarAccesorios.appendChild(li) 
+        })
+    }
+
+agregarStock.addEventListener("submit", accesorioNuevo)
 
 // validacion para evitar null desde el local storage.
+
+let baseDeDatos = accesoriosEnStock;
+let inv = JSON.parse(localStorage.getItem("BD"));
+
 if (inv === null) {
     inv = baseDeDatos;
     localStorage.setItem( "BD", JSON.stringify(inv))
 }
 
-//FORMULARIO PARA CARGAR STOCK
-let formulario = document.querySelector('.formularioStock');
-let inputNombre = document.getElementById('nombre');
-let inputPrecio = document.getElementById('precio')
-
 // E.PREVENTDEFAULT para que cuando me equivoco no vuelva a cargar.
+let formulario = document.querySelector('#agregarStock');
+let inputNombre = document.getElementById('nombre');
+let inputTipo = document.getElementById('tipo');
+let inputPrecio = document.getElementById('precio');
+
 formulario.addEventListener('submit', function (event) {
     event.preventDefault();
-    let newProd = new tiendaAccesorios(inputNombre.value, inputPrecio.value);
+    let newProd = new accesoriosModa(inputNombre.value, inputTipo.value, inputPrecio.value);
     inv.push(newProd);
     localStorage.setItem("BD", JSON.stringify(inv));
-});
+})
+
+
+
 
 
 
