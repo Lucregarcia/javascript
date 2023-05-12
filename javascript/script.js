@@ -117,8 +117,8 @@ function cargarProductos(productosElegidos) {
 
     actualizarBotonesComprar();
 }
-cargarProductos(productos);
 
+cargarProductos(productos);
 
 botonesCategorias.forEach(boton => { 
     boton.addEventListener( "click", (e) => {
@@ -142,14 +142,23 @@ function actualizarBotonesComprar () {
 });
 }
 
-const productosEnCarrito = [];
+let productosEnCarrito;
+
+let productosEnCarritoLS = localStorage.getItem("carro-productos");
+
+if (productosEnCarritoLS){
+    productosEnCarrito = JSON.parse(productosEnCarritoLS);
+    actualizarCarro();
+}else{
+    productosEnCarrito = [];
+}
 
 function agregarAlCarrito (e) {
     const botonId = e.currentTarget.id;
     const productoAgregado = productos.find (producto => producto.id === botonId);
 
     if (productosEnCarrito.some(producto => producto.id === botonId)){
-        let carro = productosEnCarrito.findIndex(producto => producto.id===botonId);
+        const carro = productosEnCarrito.findIndex(producto => producto.id===botonId);
         productosEnCarrito[carro].cantidad++
     }else {
         productoAgregado.cantidad = 1;
