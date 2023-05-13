@@ -172,6 +172,6 @@ function agregarAlCarrito (e) {
 
 function actualizarCarro() {
     let nuevoNumCarro = productosEnCarrito.reduce((acc, producto) => acc + producto.cantidad, 0);
-    console.log(numCarro);
     numCarro.innerText = nuevoNumCarro;
 }
+

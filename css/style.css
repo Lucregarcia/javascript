@@ -125,10 +125,7 @@ aside {
     gap: 1.5rem;
 }
 
-.carrito-vacio,
-.carrito-comprado {
-    color: black;
-}
+
 
 .carrito-productos {
     display: flex;
@@ -170,9 +167,9 @@ aside {
 
 .carrito-acciones-vaciar {
     border: 0;
-    background-color: black;
     padding: 6px;
     border-radius: 4px;
+    background-color:rgb(180, 149, 102);
     color: black;
     text-transform: uppercase;
     cursor: pointer;
@@ -184,7 +181,7 @@ aside {
 
 .carrito-acciones-total {
     display: flex;
-    background-color:beige;
+    background-color:rgb(180, 149, 102);
     padding: 6px;
     color: black;
     text-transform: uppercase;
@@ -195,9 +192,9 @@ aside {
 
 .carrito-acciones-comprar {
     border: 0;
-    background-color: beige;
+    background-color: rgb(180, 149, 102);
     padding: 4px;
-    color: white;
+    color: rgb(14, 13, 13);
     text-transform: uppercase;
     cursor: pointer;
     border-top-right-radius: 6px;
