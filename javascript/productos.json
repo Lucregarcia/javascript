@@ -1,0 +1,92 @@
+[
+    {
+        "id": "collar-1",
+        "titulo": "Collar Amalfi",
+        "imagen": "./img/collar 1.jpg",
+        "categoria": {
+            "nombre": "Collares",
+            "id": "collares"
+        },
+        "precio": 5000
+    },
+    {
+        "id": "pulsera-1",
+        "titulo": "Pulsera Petra",
+        "imagen": "./img/pulsera1.jpg",
+        "categoria": {
+            "nombre": "Pulseras",
+            "id": "pulseras"
+        },
+        "precio": 4500
+    },
+    {
+        "id": "aro-1",
+        "titulo": "Aros Perla",
+        "imagen": "./img/aros2.jpg",
+        "categoria": {
+            "nombre": "Aros",
+            "id": "aros"
+        },
+        "precio": 6000
+    },
+    {
+        "id": "collar-2",
+        "titulo": "Collar Argenta",
+        "imagen": "./img/collar3.jpg",
+        "categoria": {
+            "nombre": "Collares",
+            "id": "collares"
+        },
+        "precio": 7000
+    },
+    {
+        "id": "collar-3",
+        "titulo": "Collar La Madrid",
+        "imagen": "./img/collar4.jpg",
+        "categoria": {
+            "nombre": "Collares",
+            "id": "collares"
+        },
+        "precio": 8000
+    },
+    {
+        "id": "anillo-1",
+        "titulo": "Anillo Galaxy",
+        "imagen": "./img/anillo1.jpg",
+        "categoria": {
+            "nombre": "Anillos",
+            "id": "anillos"
+        },
+        "precio": 10000
+    },
+    {
+        "id": "anillo-2",
+        "titulo": "Anillo Esmeralda",
+        "imagen": "./img/anillo2.jpg",
+        "categoria": {
+            "nombre": "Anillos",
+            "id": "anillos"
+        },
+        "precio": 6000
+    },
+    {
+        "id": "aro-2",
+        "titulo": "Aros Esmeralda",
+        "imagen": "./img/aros1.jpg",
+        "categoria": {
+            "nombre": "Aros",
+            "id": "aros"
+        },
+        "precio": 5500
+    },
+    {
+        "id": "pulsera-2",
+        "titulo": "Pulsera Dijes",
+        "imagen": "./img/pulsera-3.png",
+        "categoria": {
+            "nombre": "Pulseras",
+            "id": "pulseras"
+        },
+        "precio": 8500
+    }
+]
