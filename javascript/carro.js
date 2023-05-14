@@ -92,6 +92,13 @@ function actualizarTotal() {
 botonComprar.addEventListener ("click", comprarCarro);
 
 function comprarCarro (){
+    Swal.fire({
+        title: 'Tu BASSET es tuyo, Gracias por elegrinos :)!',
+        imageUrl: '../img/logo.png',
+        imageWidth: 400,
+        imageHeight: 400,
+        imageAlt: 'Custom image',
+    })
     productosEnCarrito.length = 0;
     localStorage.setItem("carro-productos", JSON.stringify(productosEnCarrito));
     
