@@ -60,7 +60,7 @@ cargarProductosCarro();
 
 
 function actualizarBotonesBorrar () {
-    botonesBorrar = document.querySelectorAll(".carrito-producto-Borrar");
+    botonesBorrar = document.querySelectorAll(".carrito-producto-borrar");
 
     botonesBorrar.forEach(boton => {boton.addEventListener("click", eliminarCarrito)
 });
